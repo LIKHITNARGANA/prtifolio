@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Number Guessing Game</title>
+    <style>
+        html {
+            font-family: sans-serif;
+            background-image: url('https://img.freepik.com/premium-photo/grainy-gradient-background-red-white-blue-colors-with-soft-faded-watercolor-border-texture_927344-24167.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.8);
+            transition: transform 0.3s ease;
+        }
+
+        body:hover {
+            transform: scale(1.02);
+        }
+
+        .form input[type="number"] {
+            width: 200px;
+            padding: 10px;
+            border: 2px solid #4caf50;
+            border-radius: 5px;
+            transition: border-color 0.3s, transform 0.2s;
+        }
+
+        .form input[type="number"]:focus {
+            border-color: #ff5722;
+            transform: scale(1.05);
+        }
+
+        .lastResult, .lowOrHi {
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards; /* Add fade-in effect */
+        }
+
+        .lastResult.show, .lowOrHi.show {
+            opacity: 1;
+        }
+
+        .button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            animation: pulse 1.5s infinite; /* Add pulse effect */
+        }
+
+        .button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .resultParas p {
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .resultParas p.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .shake {
+            animation: shake 0.5s ease;
+        }
+
+        .bounce {
+            animation: bounce 0.5s ease;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(0); }
+            25% { transform: translate(-5px); }
+            50% { transform: translate(5px); }
+            75% { transform: translate(-5px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Number Guessing Game</h1>
+        <p>We've selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
+
+        <div class="form">
+            <label for="guessField">Enter a guess: </label>
+            <input type="number" min="1" max="100" required id="guessField" class="guessField">
+            <input type="submit" value="Submit guess" class="button guessSubmit">
+        </div>
+
+        <div class="resultParas">
+            <p class="guesses"></p>
+            <p class="lastResult"></p>
+            <p class="lowOrHi"></p>
+        </div>
+    </div>
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        const guesses = document.querySelector('.guesses');
+        const lastResult = document.querySelector('.lastResult');
+        const lowOrHi = document.querySelector('.lowOrHi');
+        const guessSubmit = document.querySelector('.guessSubmit');
+        const guessField = document.querySelector('.guessField');
+        let guessCount = 1;
+        let resetButton;
+
+        function checkGuess() {
+            const userGuess = Number(guessField.value);
+            if (guessCount === 1) {
+                guesses.textContent = 'Previous guesses: ';
+            }
+
+            guesses.textContent += `${userGuess} `;
+            guesses.classList.add('show');
+
+            if (userGuess === randomNumber) {
+                lastResult.textContent = 'Congratulations! You got it right!';
+                lastResult.style.backgroundColor = 'green';
+                lowOrHi.textContent = '';
+                lastResult.classList.add('show');
+                setGameOver();
+            } else if (guessCount === 10) {
+                lastResult.textContent = '!!!GAME OVER!!!';
+                lowOrHi.textContent = '';
+                lastResult.classList.add('show');
+                setGameOver();
+            } else {
+                lastResult.textContent = 'Wrong!';
+                lastResult.style.backgroundColor = 'red';
+                lastResult.classList.add('show');
+                if (userGuess < randomNumber) {
+                    lowOrHi.textContent = 'Last guess was too low!';
+                } else if (userGuess > randomNumber) {
+                    lowOrHi.textContent = 'Last guess was too high!';
+                }
+                lowOrHi.classList.add('show');
+                guessField.classList.add('shake');
+                setTimeout(() => {
+                    guessField.classList.remove('shake');
+                }, 500);
+            }
+
+            guessCount++;
+            guessField.value = '';
+            guessField.focus();
+        }
+
+        guessSubmit.addEventListener('click', checkGuess);
+
+        function setGameOver() {
+            guessField.disabled = true;
+            guessSubmit.disabled = true;
+            resetButton = document.createElement('button');
+            resetButton.textContent = 'Start new game';
+            resetButton.classList.add('button');
+            document.body.appendChild(resetButton);
+            resetButton.addEventListener('click', resetGame);
+        }
+
+        function resetGame() {
+            guessCount = 1;
+            const resetParas = document.querySelectorAll('.resultParas p');
+            for (const resetPara of resetParas) {
+                resetPara.textContent = '';
+                resetPara.classList.remove('show');
+            }
+
+            resetButton.parentNode.removeChild(resetButton);
+            guessField.disabled = false;
+            guessSubmit.disabled = false;
+            guessField.value = '';
+            guessField.focus();
+            lastResult.style.backgroundColor = 'white';
+            randomNumber = Math.floor(Math.random() * 100) + 1;
+        }
+    </script>
+</body>
+</html>

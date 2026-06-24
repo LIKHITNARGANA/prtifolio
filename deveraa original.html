@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Collection</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow: hidden; 
+        }
+        .video-background {
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            min-width: 100%; 
+            min-height: 100%; 
+            width: auto; 
+            height: auto; 
+            z-index: -1;
+            object-fit: cover; 
+        }
+        .overlay {
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); 
+            z-index: 1;
+        }
+        .games-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 items per row */
+            gap: 20px;
+            padding: 50px;
+            z-index: 2;
+            position: relative;
+            min-height: 100vh; 
+            overflow: hidden; /* Changed to hide overflow */
+        }
+        .game-container {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .game-image {
+            height: 200px; /* Adjusted size */
+            width: 200px; /* Adjusted size */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .game-image:hover {
+            transform: scale(1.2); /* Slightly smaller scale for hover */
+            box-shadow: 0px 4px 15px rgba(225, 18, 18, 0.2);
+        }
+        .game-title {
+            margin-top: 10px;
+            font-size: 1.2em; /* Adjusted font size */
+            color: #fff;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop class="video-background">
+        <source src="I:\A project\ALL CODES OF PROJECT\GOLMAL GAMESt.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="games-container">
+            <div class="game-container">
+                <a href="quizz.html">
+                    <img class="game-image" src="https://img.gamepix.com/games/12313/cover/12313.png?w=400" alt="Quizz Game">
+                </a>
+                <div class="game-title">Quizz Game</div>
+            </div>
+            <div class="game-container">
+                <a href="brick game.html">
+                    <img class="game-image" src="https://images.launchbox-app.com/23e44757-6659-412f-9d45-432b9865e494.jpg" alt="Brick Game">
+                </a>
+                <div class="game-title">Brick Game</div>
+            </div>
+            <div class="game-container">
+                <a href="typing.html">
+                    <img class="game-image" src="https://play-lh.googleusercontent.com/vqcumNluBRJ95zplaIUkBcOAyCSzu3_HsPcT_viEc33pjOWZLnxH_QVOywoSdojcXg" alt="Typing Test">
+                </a>
+                <div class="game-title">Typing Test</div>
+            </div>
+            <div class="game-container">
+                <a href="2048.html">
+                    <img class="game-image" src="https://lh3.googleusercontent.com/ZV0IXSCwUofCS6RabwNJ_yp4vwcxEenGYwscnbWtESd-6xt7JYRc6-PpWJAXUtbhJC74SCDt6970NS1ftvHTeC47XGE=s1280-w1280-h800" alt="2048 Game">
+                </a>
+                <div class="game-title">2048 Game</div>
+            </div>
+            <div class="game-container">
+                <a href="canvas tetris.html">
+                    <img class="game-image" src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Ffnfgwoh74wzz0iyt6zkp.jpeg" alt="Canvas Tetris">
+                </a>
+                <div class="game-title">Canvas Tetris</div>
+            </div>
+            <div class="game-container">
+                <a href="tic tac toe.html">
+                    <img class="game-image" src="https://play-lh.googleusercontent.com/KZTO1L6r8CzWlg2InJoU_ndRAuvYiaS-35MyYdDPeeVCPNVfM9SBY2qRGjvvADmDIR8" alt="Tic Tac Toe">
+                </a>
+                <div class="game-title">Tic Tac Toe</div>
+            </div>
+            <div class="game-container">
+                <a href="cardmatching.html">
+                    <img class="game-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz9V792cZuGsRWlZpGT8ELnVeQBH1Owso_9Q&s" alt="Card Matching">
+                </a>
+                <div class="game-title">Card Matching</div>
+            </div>
+            <div class="game-container">
+                <a href="fourinline.html">
+                    <img class="game-image" src="https://imgs.crazygames.com/four-in-a-row_16x9/20251223064619/four-in-a-row_16x9-cover?metadata=none&quality=60&height=2568" alt="Four in a Row">
+                </a>
+                <div class="game-title">Four in a Row</div>
+            </div>
+            <div class="game-container">
+                <a href="maze.html">
+                    <img class="game-image" src="https://construct-static.com/uploads/165805/544cd344-a61c-4654-9174-4fe5c43cddd1/r/358/ss2.png" alt="Maze">
+                </a>
+                <div class="game-title">Maze</div>
+            </div>
+            <div class="game-container">
+                <a href="pingpong.html">
+                    <img class="game-image" src="https://www.cbc.ca/kids/images/Ping-Pong-Two-Player_thumb.png" alt="Ping Pong">
+                </a>
+                <div class="game-title">Ping Pong</div>
+            </div>
+            <div class="game-container">
+                <a href="slidebrick.html">
+                    <img class="game-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLv7cD_tWdpbCWNai4VPiGUBUmOELhy1pEeg&s" alt="Slide Brick">
+                </a>
+                <div class="game-title">Slide Brick</div>
+            </div>
+            <div class="game-container">
+                <a href="roadcross.html">
+                    <img class="game-image" src="https://i.ytimg.com/vi/RCrEd09S9PA/hqdefault.jpg" alt="Road Cross">
+                </a>
+                <div class="game-title">Road Cross</div>
+            </div>
+            <div class="game-container">
+                <a href="numberguess.html">
+                    <img class="game-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2wa79Iu5Hc6tWwwtm9YZj7daCD2m8QuAYKQ&s" alt="Number Guess">
+                </a>
+                <div class="game-title">Number Guess</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

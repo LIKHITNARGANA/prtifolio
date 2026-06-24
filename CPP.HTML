@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn C++</title>
+  
+  <!-- Bootstrap CSS (CDN) -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    /* Custom Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 15px 0;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+    }
+    h1 {
+      color: #ecf0f1;
+      background-color: #3498db;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      animation: highlightTitle 2s ease-in-out infinite alternate;
+    }
+
+    nav {
+      background-color: #34495e;
+      padding: 10px;
+      text-align: center;
+      animation: slideIn 1.5s ease-out;
+    }
+    nav a {
+      color: #ecf0f1;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      opacity: 0;
+      animation: fadeInLink 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 20px;
+      background-color: #fff;
+    }
+    h2, h3 {
+      color: #2c3e50;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+    h2::after, h3::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #3498db;
+      bottom: 0;
+      left: 0;
+    }
+    footer {
+      background-color: #34495e;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 10px;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      animation: fadeIn 2s ease-in 1s;
+    }
+    section {
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeInSection 2s ease-out forwards;
+      animation-delay: 1s;
+    }
+    code {
+      display: block;
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    /* Keyframes for animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInLink {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes fadeInSection {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes highlightTitle {
+      0% { background-color: #3498db; color: #ecf0f1; }
+      50% { background-color: #1abc9c; color: #2c3e50; }
+      100% { background-color: #3498db; color: #ecf0f1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Highlighted Title -->
+    <h1>Learn C++</h1>
+    <p>Your guide to learning the C++ language</p>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">C++ Guide</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#introduction">Introduction</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#variables">Variables</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#data-types">Data Types</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#control-structures">Control Structures</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#functions">Functions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#loops">Loops</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#example">Example Program</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container mt-4">
+    <!-- Introduction Section -->
+    <section id="introduction">
+      <h2>Introduction to C++</h2>
+      <p>C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language. It adds object-oriented features and is widely used in software development, game programming, and systems programming.</p>
+    </section>
+
+    <!-- Variables Section -->
+    <section id="variables">
+      <h2>C++ Variables</h2>
+      <p>In C++, variables are used to store data. Each variable must be declared with a specific type before it is used. Here are common variable types in C++:</p>
+      <ul>
+        <li><strong>int</strong> - Integer type</li>
+        <li><strong>float</strong> - Floating-point type</li>
+        <li><strong>double</strong> - Double precision floating-point type</li>
+        <li><strong>char</strong> - Character type</li>
+        <li><strong>bool</strong> - Boolean type</li>
+      </ul>
+      <p>Example:</p>
+      <pre>
+        <code>
+          int age = 25;
+          float salary = 55000.50;
+          char grade = 'A';
+          bool isStudent = true;
+        </code>
+      </pre>
+    </section>
+
+    <!-- Data Types Section -->
+    <section id="data-types">
+      <h2>C++ Data Types</h2>
+      <p>C++ supports several primitive data types, such as integers, floating-point numbers, characters, and booleans. You can also define your own custom data types using structures or classes.</p>
+      <p>Example:</p>
+      <pre>
+        <code>
+          int num = 100;       // Integer
+          double pi = 3.1415;  // Double precision
+          char letter = 'A';   // Character
+          bool flag = true;    // Boolean
+        </code>
+      </pre>
+    </section>
+
+    <!-- Control Structures Section -->
+    <section id="control-structures">
+      <h2>C++ Control Structures</h2>
+      <p>C++ provides several control structures such as conditional statements and loops to control the flow of execution.</p>
+      <p>Example of an if-else statement:</p>
+      <pre>
+        <code>
+          int num = 10;
+          if (num > 5) {
+              cout << "Number is greater than 5" << endl;
+          } else {
+              cout << "Number is less than or equal to 5" << endl;
+          }
+        </code>
+      </pre>
+    </section>
+
+    <!-- Functions Section -->
+    <section id="functions">
+      <h2>C++ Functions</h2>
+      <p>Functions are used to organize and reuse blocks of code. A function in C++ is defined using the <code>return_type function_name()</code> syntax.</p>
+      <p>Example:</p>
+      <pre>
+        <code>
+          #include &lt;iostream&gt;
+          using namespace std;
+
+          int add(int a, int b) {
+              return a + b;
+          }
+
+          int main() {
+              int sum = add(5, 10);
+              cout << "Sum is: " << sum << endl;
+              return 0;
+          }
+        </code>
+      </pre>
+    </section>
+
+    <!-- Loops Section -->
+    <section id="loops">
+      <h2>C++ Loops</h2>
+      <p>Loops allow you to repeat a block of code. C++ provides three main types of loops: for, while, and do-while loops.</p>
+      <p>Example of a for loop:</p>
+      <pre>
+        <code>
+          for (int i = 0; i < 5; i++) {
+              cout << i << endl;
+          }
+        </code>
+      </pre>
+    </section>
+
+    <!-- Example Program Section -->
+    <section id="example">
+      <h2>C++ Example Program</h2>
+      <p>Here’s a simple C++ program that takes user input and displays a greeting:</p>
+      <pre>
+        <code>
+          #include &lt;iostream&gt;
+          using namespace std;
+
+          int main() {
+              string name;
+              cout << "Enter your name: ";
+              cin >> name;
+              cout << "Hello, " << name << "!" << endl;
+              return 0;
+          }
+        </code>
+      </pre>
+    </section>
+  </main>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

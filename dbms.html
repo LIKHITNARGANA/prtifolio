@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn DBMS</title>
+  
+  <!-- Bootstrap CSS (CDN) -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    /* Custom Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 15px 0;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+    }
+    h1 {
+      color: #ecf0f1;
+      background-color: #3498db;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      animation: highlightTitle 2s ease-in-out infinite alternate;
+    }
+
+    nav {
+      background-color: #34495e;
+      padding: 10px;
+      text-align: center;
+      animation: slideIn 1.5s ease-out;
+    }
+    nav a {
+      color: #ecf0f1;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      opacity: 0;
+      animation: fadeInLink 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 20px;
+      background-color: #fff;
+    }
+    h2, h3 {
+      color: #2c3e50;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+    h2::after, h3::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #3498db;
+      bottom: 0;
+      left: 0;
+    }
+    footer {
+      background-color: #34495e;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 10px;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      animation: fadeIn 2s ease-in 1s;
+    }
+    section {
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeInSection 2s ease-out forwards;
+      animation-delay: 1s;
+    }
+    code {
+      display: block;
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    /* Keyframes for animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes fadeInLink {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes fadeInSection {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes highlightTitle {
+      0% { background-color: #3498db; color: #ecf0f1; }
+      50% { background-color: #1abc9c; color: #2c3e50; }
+      100% { background-color: #3498db; color: #ecf0f1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Highlighted Title -->
+    <h1>Learn DBMS</h1>
+    <p>Your guide to learning Database Management Systems</p>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">DBMS Guide</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#introduction">Introduction</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#dbms-concepts">DBMS Concepts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#types">Types of DBMS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#sql">SQL Basics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#normalization">Normalization</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#transactions">Transactions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#keys">Keys in DBMS</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container mt-4">
+    <!-- Introduction Section -->
+    <section id="introduction">
+      <h2>Introduction to DBMS</h2>
+      <p>DBMS (Database Management System) is software that allows you to create, manage, and interact with databases. It provides a systematic way to store, retrieve, and manipulate data.</p>
+      <p>A DBMS helps in managing large amounts of data efficiently, ensuring data integrity, and supporting transactions.</p>
+    </section>
+
+    <!-- DBMS Concepts Section -->
+    <section id="dbms-concepts">
+      <h2>DBMS Concepts</h2>
+      <p>Key concepts of DBMS include:</p>
+      <ul>
+        <li><strong>Data:</strong> Raw facts and figures.</li>
+        <li><strong>Database:</strong> An organized collection of data.</li>
+        <li><strong>DBMS:</strong> A system used to manage databases.</li>
+        <li><strong>Schema:</strong> The structure of a database.</li>
+        <li><strong>Entity:</strong> A real-world object represented in a database.</li>
+        <li><strong>Attribute:</strong> The property of an entity.</li>
+      </ul>
+    </section>
+
+    <!-- Types of DBMS Section -->
+    <section id="types">
+      <h2>Types of DBMS</h2>
+      <p>There are four main types of DBMS:</p>
+      <ul>
+        <li><strong>Hierarchical DBMS:</strong> Data is structured in a tree-like format (e.g., IMS).</li>
+        <li><strong>Network DBMS:</strong> Data is represented in a graph structure (e.g., IDMS).</li>
+        <li><strong>Relational DBMS (RDBMS):</strong> Data is stored in tables (e.g., MySQL, Oracle).</li>
+        <li><strong>Object-Oriented DBMS:</strong> Data is represented as objects (e.g., ObjectDB).</li>
+      </ul>
+    </section>
+
+    <!-- SQL Basics Section -->
+    <section id="sql">
+      <h2>SQL Basics</h2>
+      <p>SQL (Structured Query Language) is used to interact with relational databases. It allows you to create, read, update, and delete (CRUD) database records.</p>
+      <p>Example of a basic SQL query:</p>
+      <pre>
+        <code>
+          SELECT * FROM Students WHERE Age > 20;
+        </code>
+      </pre>
+      <p>This query retrieves all records from the "Students" table where the age is greater than 20.</p>
+    </section>
+
+    <!-- Normalization Section -->
+    <section id="normalization">
+      <h2>Normalization</h2>
+      <p>Normalization is a process of organizing the data in a database to reduce redundancy and improve data integrity. The primary goal is to divide large tables into smaller ones and link them using relationships.</p>
+      <p>There are different normalization forms (1NF, 2NF, 3NF, BCNF) to ensure that a database is free of anomalies.</p>
+    </section>
+
+    <!-- Transactions Section -->
+    <section id="transactions">
+      <h2>Transactions in DBMS</h2>
+      <p>A transaction in DBMS is a sequence of operations performed as a single unit. A transaction ensures that either all operations are successfully completed or none are performed (Atomicity).</p>
+      <ul>
+        <li><strong>ACID Properties:</strong> Atomicity, Consistency, Isolation, Durability.</li>
+      </ul>
+    </section>
+
+    <!-- Keys in DBMS Section -->
+    <section id="keys">
+      <h2>Keys in DBMS</h2>
+      <p>Keys are used to uniquely identify records in a table. Types of keys include:</p>
+      <ul>
+        <li><strong>Primary Key:</strong> A unique key for each record.</li>
+        <li><strong>Foreign Key:</strong> A key used to link two tables.</li>
+        <li><strong>Candidate Key:</strong> Any key that can act as a primary key.</li>
+        <li><strong>Composite Key:</strong> A key made up of more than one column.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

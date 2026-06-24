@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Data Structures</title>
+  
+  <!-- Bootstrap CSS (CDN) -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    /* Custom Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 15px 0;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+    }
+    h1 {
+      color: #ecf0f1;
+      background-color: #3498db;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      animation: highlightTitle 2s ease-in-out infinite alternate;
+    }
+
+    nav {
+      background-color: #34495e;
+      padding: 10px;
+      text-align: center;
+      animation: slideIn 1.5s ease-out;
+    }
+    nav a {
+      color: #ecf0f1;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      opacity: 0;
+      animation: fadeInLink 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 20px;
+      background-color: #fff;
+    }
+    h2, h3 {
+      color: #2c3e50;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+    h2::after, h3::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #3498db;
+      bottom: 0;
+      left: 0;
+    }
+    footer {
+      background-color: #34495e;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 10px;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      animation: fadeIn 2s ease-in 1s;
+    }
+    section {
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeInSection 2s ease-out forwards;
+      animation-delay: 1s;
+    }
+    code {
+      display: block;
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    /* Keyframes for animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInLink {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes fadeInSection {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes highlightTitle {
+      0% { background-color: #3498db; color: #ecf0f1; }
+      50% { background-color: #1abc9c; color: #2c3e50; }
+      100% { background-color: #3498db; color: #ecf0f1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Highlighted Title -->
+    <h1>Learn Data Structures</h1>
+    <p>Your guide to learning data structures in programming</p>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Data Structures Guide</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#introduction">Introduction</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#arrays">Arrays</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#linked-lists">Linked Lists</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#stacks">Stacks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#queues">Queues</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#trees">Trees</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#graphs">Graphs</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container mt-4">
+    <!-- Introduction Section -->
+    <section id="introduction">
+      <h2>Introduction to Data Structures</h2>
+      <p>Data structures are essential for organizing and managing data efficiently. They provide a way to store and retrieve data in a structured format. The choice of data structure directly affects the performance of algorithms.</p>
+      <p>Some commonly used data structures include arrays, linked lists, stacks, queues, trees, and graphs.</p>
+    </section>
+
+    <!-- Arrays Section -->
+    <section id="arrays">
+      <h2>Arrays</h2>
+      <p>An array is a collection of elements of the same type, stored in contiguous memory locations. Arrays allow random access to elements using indices.</p>
+      <p>Example of an array in C++:</p>
+      <pre>
+        <code>
+          int arr[5] = {1, 2, 3, 4, 5};
+          cout << "The third element is: " << arr[2] << endl;
+        </code>
+      </pre>
+    </section>
+
+    <!-- Linked Lists Section -->
+    <section id="linked-lists">
+      <h2>Linked Lists</h2>
+      <p>A linked list is a collection of nodes where each node contains data and a reference (or link) to the next node in the sequence. Unlike arrays, linked lists do not require contiguous memory locations.</p>
+      <p>Example of a simple linked list node in C++:</p>
+      <pre>
+        <code>
+          struct Node {
+              int data;
+              Node* next;
+          };
+          Node* head = new Node();
+          head->data = 10;
+          head->next = nullptr;
+        </code>
+      </pre>
+    </section>
+
+    <!-- Stacks Section -->
+    <section id="stacks">
+      <h2>Stacks</h2>
+      <p>A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. Elements are added and removed from the same end, called the top of the stack.</p>
+      <p>Example of using a stack in C++:</p>
+      <pre>
+        <code>
+          stack<int> s;
+          s.push(10);
+          s.push(20);
+          s.pop();
+        </code>
+      </pre>
+    </section>
+
+    <!-- Queues Section -->
+    <section id="queues">
+      <h2>Queues</h2>
+      <p>A queue is a linear data structure that follows the First-In-First-Out (FIFO) principle. Elements are added from the rear and removed from the front.</p>
+      <p>Example of using a queue in C++:</p>
+      <pre>
+        <code>
+          queue<int> q;
+          q.push(10);
+          q.push(20);
+          q.pop();
+        </code>
+      </pre>
+    </section>
+
+    <!-- Trees Section -->
+    <section id="trees">
+      <h2>Trees</h2>
+      <p>A tree is a hierarchical data structure consisting of nodes. Each node contains a value and references to child nodes. The top node is called the root.</p>
+      <p>Example of a simple binary tree node in C++:</p>
+      <pre>
+        <code>
+          struct Node {
+              int data;
+              Node* left;
+              Node* right;
+          };
+          Node* root = new Node();
+          root->data = 10;
+        </code>
+      </pre>
+    </section>
+
+    <!-- Graphs Section -->
+    <section id="graphs">
+      <h2>Graphs</h2>
+      <p>A graph is a collection of nodes (vertices) and edges that connect pairs of nodes. Graphs can be directed or undirected and may contain cycles.</p>
+      <p>Example of a simple graph in C++:</p>
+      <pre>
+        <code>
+          #include <iostream>
+          #include <vector>
+          using namespace std;
+          
+          class Graph {
+          public:
+              vector<vector<int>> adj;
+              Graph(int V) {
+                  adj.resize(V);
+              }
+              void addEdge(int v, int w) {
+                  adj[v].push_back(w);
+              }
+          };
+        </code>
+      </pre>
+    </section>
+  </main>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
